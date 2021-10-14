@@ -31,7 +31,7 @@ switch ($day)
 $n = 1;
 
 while ($n <= 10) {
-    //echo $n . '<br>';
+    echo $n . '<br>';
     //$n++;
     //$n += 1;
     $n = $n + 1;
@@ -60,5 +60,45 @@ while ($N <= 20) {
 // Los numero primos del 1 al 100 son:
 // n .... 100
 
+$num = 1; // variable usada para ir hasta el 100
+$I = 2; // variable entre la cual se va a dividir $num 
+$primo = 0; // divisores de $num - lleva una cuenta
+
+while ($num <= 100) { // contador de 1 a 100
+    $primo = 0; // cada iteracion re estrablecemos el valor del contador de divisores
+    while ($I < $num) { // implica que $i = divisores seran menores al numero ej: 5 toma divisores 2, 3, 4
+        if ($num % $I == 0) { // si $num es divisible por alguno, no es primo
+            $primo++; // cuenta los divisores
+        }
+        $I++; // iteramos de 1 en 1 los divisores
+    }
+    if ($primo == 0) { // validamos si el contador de divisores permanecio en 0
+        echo $num . ' es primo <br>'; // imprimimos en pantalla los PRIMOS
+    }
+    $I=2; // re estrablecemos los divisores en 2 
+    $num++; // aumentamos de 1 en 1 
+}
+
+// Ejercicio 5
+
+for ($i=1; $i <=100 ; $i++) { 
+    if ($i % 3 == 0 && $i % 5 == 0) {
+        echo 'FizzBuzz <br>';
+    } elseif ($i % 3 == 0) {
+        echo 'Fizz <br>';
+    } elseif ($i % 5 == 0) {
+        echo 'Buzz <br>';
+   } else {
+       echo $i . '<br>';
+    } 
+}
+
+// Ejercicio 6
+
+$semana = array('Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo');
+
+foreach ($semana as $key => $value) {
+    echo $key . ' --> ' . $value . '<br>';
+}
 
 ?>
